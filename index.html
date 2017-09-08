@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--网站编码格式，UTF-8 国际编码，GBK或 gb2312 中文编码-->
+    <meta charset="UTF-8">
+    <meta name="Keywords" content="关键词一，关键词二">
+    <meta name="Description" content="网站描述内容">
+    <title>sad</title>
+    <style>
+        body {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            height: 100vh;
+            background-image: -webkit-linear-gradient(bottom, #61677B 0%, #CA728F 100%);
+            background-image: linear-gradient(to top, #61677B 0%, #CA728F 100%);
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 270px;
+        }
+        .container * {
+            position: absolute;
+        }
+
+        .head {
+            top: 25px;
+            left: calc(50% - 35px);
+            width: 70px;
+            height: 80px;
+            background: #34495E;
+            border-radius: 50% 50% 10% 10%;
+            -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+            z-index: 2;
+        }
+        .head::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 13px;
+            background: #22303d;
+            border-radius: 50% 50% 10% 10%;
+        }
+        .head::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            right: 2px;
+            width: 22%;
+            height: 1px;
+            background: #22303d;
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+
+        .top {
+            top: -11px;
+            left: 25px;
+            width: 26px;
+            height: 17px;
+            background: #22303d;
+            border-radius: 50% 50% 0 0;
+            -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+        }
+        .top::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 30%;
+            width: 40%;
+            height: 12px;
+            background: #34495E;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .eye {
+            background: -webkit-linear-gradient(265deg, #22303d 55%, #fff 55%);
+            background: linear-gradient(185deg, #22303d 55%, #fff 55%);
+            border-radius: 50%;
+        }
+        .eye .pupil {
+            width: 6px;
+            background: #34495E;
+            border-radius: 0 0 50% 50%;
+            -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+        }
+        .eye_l {
+            top: 38px;
+            left: 18px;
+            width: 16px;
+            height: 16px;
+        }
+        .eye_l .pupil {
+            top: 9px;
+            left: 5px;
+            height: 4px;
+        }
+        .eye_r {
+            top: 40px;
+            right: 10px;
+            width: 13px;
+            height: 15px;
+        }
+        .eye_r .pupil {
+            top: 8px;
+            left: 4px;
+            height: 3px;
+        }
+
+        .ear {
+            width: 7px;
+            height: 14px;
+            background: #34495E;
+        }
+        .ear::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            width: 9px;
+            height: 20px;
+            background: #34495E;
+        }
+        .ear_l {
+            top: 38px;
+            left: -7px;
+        }
+        .ear_l::before {
+            left: -9px;
+            border-radius: 50% 0 0 50%;
+        }
+        .ear_r {
+            top: 40px;
+            right: -7px;
+        }
+        .ear_r::before {
+            right: -9px;
+            border-radius: 0 50% 50% 0;
+        }
+
+        .neck {
+            top: 95px;
+            left: calc(50% - 12px);
+            width: 12px;
+            height: 20px;
+            background: #34495E;
+            z-index: 1;
+        }
+
+        .body {
+            top: 115px;
+            left: calc(50% - 45px);
+            width: 80px;
+            height: 110px;
+            background: #34495E;
+            border-radius: 40% 40% 5% 5% / 10% 10% 5% 5%;
+        }
+
+        .arm {
+            top: 10px;
+            width: 7px;
+            height: 20px;
+            background: #34495E;
+        }
+        .arm::before {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            background: #3d566e;
+            z-index: 2;
+        }
+        .arm .long {
+            top: -7px;
+            width: 40px;
+            height: 70px;
+            border: 10px solid transparent;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .arm .circle {
+            top: 60px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #34495E;
+            border: 7px solid #22303d;
+            z-index: 2;
+        }
+        .arm_l {
+            left: -7px;
+        }
+        .arm_l::before {
+            left: -70%;
+            border-radius: 50% 0 0 50%;
+        }
+        .arm_l .long {
+            left: -15px;
+            border-left: 10px solid #34495E;
+        }
+        .arm_l .circle {
+            left: -13px;
+        }
+        .arm_r {
+            right: -7px;
+        }
+        .arm_r::before {
+            right: -70%;
+            border-radius: 0 50% 50% 0;
+        }
+        .arm_r .long {
+            right: -14px;
+            border-right: 10px solid #34495E;
+        }
+        .arm_r .circle {
+            left: -5px;
+        }
+
+        .leg {
+            bottom: -15px;
+            width: 25px;
+            height: 15px;
+            background: #22303d;
+        }
+        .leg::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            width: 35px;
+            height: 25px;
+            background: -webkit-linear-gradient(top, #34495E 70%, #22303d 70%, #22303d 78%, transparent 78%), -webkit-repeating-linear-gradient(right, #22303d 0, #22303d 2px, #34495E 2px, #34495E 4px);
+            background: linear-gradient(to bottom, #34495E 70%, #22303d 70%, #22303d 78%, transparent 78%), repeating-linear-gradient(to left, #22303d 0, #22303d 2px, #34495E 2px, #34495E 4px);
+        }
+        .leg_l {
+            left: 8px;
+        }
+        .leg_l::before {
+            right: 0;
+            border-radius: 40% 0 10% 10%;
+        }
+        .leg_r {
+            right: 8px;
+        }
+        .leg_r::before {
+            border-radius: 0 40% 10% 10%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="head">
+        <div class="top"></div>
+        <div class="eye eye_l">
+            <div class="pupil"></div>
+        </div>
+        <div class="eye eye_r">
+            <div class="pupil"></div>
+        </div>
+        <div class="ear ear_l"></div>
+        <div class="ear ear_r"></div>
+    </div>
+    <div class="neck"></div>
+    <div class="body">
+        <div class="arm arm_l">
+            <div class="long"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="arm arm_r">
+            <div class="long"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="leg leg_l"></div>
+        <div class="leg leg_r"></div>
+    </div>
+</div>
+</body>
+</html>
